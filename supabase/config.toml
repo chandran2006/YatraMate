@@ -1,0 +1,7 @@
+project_id = "pyktcqqgouqgemqcmmwp"
+
+[functions.chat]
+verify_jwt = false
+
+[functions.trip-planner]
+verify_jwt = false
