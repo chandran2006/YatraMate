@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { useSearchParams } from "react-router-dom";
+=======
+>>>>>>> 982b5b72a728c263c1980821ff84bde55d0b1040
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Search, MapPin, Star, Loader2 } from "lucide-react";
@@ -21,9 +24,14 @@ type Place = {
 };
 
 const ExplorePage = () => {
+<<<<<<< HEAD
   const [searchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
+=======
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+>>>>>>> 982b5b72a728c263c1980821ff84bde55d0b1040
   const [places, setPlaces] = useState<Place[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -39,11 +47,18 @@ const ExplorePage = () => {
     fetchPlaces();
   }, []);
 
+<<<<<<< HEAD
   const query = searchQuery.toLowerCase();
   const filtered = places.filter(
     (p) =>
       (activeCategory === "All" || p.category.toLowerCase() === activeCategory.toLowerCase()) &&
       (p.name.toLowerCase().includes(query) || p.city.toLowerCase().includes(query) || p.country.toLowerCase().includes(query))
+=======
+  const filtered = places.filter(
+    (p) =>
+      (activeCategory === "All" || p.category.toLowerCase() === activeCategory.toLowerCase()) &&
+      p.name.toLowerCase().includes(searchQuery.toLowerCase())
+>>>>>>> 982b5b72a728c263c1980821ff84bde55d0b1040
   );
 
   return (
